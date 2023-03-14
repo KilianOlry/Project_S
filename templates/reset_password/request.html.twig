@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/reset-mdp.css') }}">
+{% endblock %}
+{% block title %}Rénitialiser votre Mot de passe
+{% endblock %}
+
+{% block body %}
+	<div class="slide"></div>
+	<div class="main">
+		<div class="container">
+			{% for flash_error in app.flashes('reset_password_error') %}
+				<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+			{% endfor %}
+			<h1>Rénitialisation de votre mot de passe</h1>
+
+			{{ form_start(requestForm, {'attr': {'class':'formulairelol'}}
+			) }}
+			<div>
+				<small class="info">
+					Veuillez saisir votre adresse mail et vous recevrez un mail pour rénitialiser votre mot de passe.
+				</small>
+			</div>
+			{{ form_row(requestForm.email) }}
+
+
+			<button class="btn">Rénialiser votre mot de passe</button>
+			{{ form_end(requestForm) }}
+		</div>
+	</div>
+	{% block footer %}{% endblock %}
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block title %}Log in
+{% endblock %}
+
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
+{% endblock %}
+
+
+{% block body %}
+	<div class="slide"></div>
+	<section class="main">
+		<div class="container">
+			<h2>Se connecter</h2>
+			<form method="post" class="formulaire">
+
+				{% if error %}
+					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+				{% endif %}
+
+				{% if app.user %}
+					<div class="mb-3">
+						Vous êtes connecter en tant que
+						{{ app.user.userIdentifier }},
+						<a href="{{ path('app_logout') }}">Logout</a>
+					</div>
+				{% endif %}
+
+				<div class="mail">
+					<label for="inputEmail">Email</label>
+					<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+				</div>
+
+				<div class="mdp">
+					<label for="inputPassword">Mot de passe</label>
+
+					<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+				</div>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<div class="btn login">
+
+					<button class="submit" type="submit">
+						Se connecter
+					</button>
+
+				</div>
+			</form>
+			<div class="btn_2">
+				<div class="btn_1">
+					<a href="{{path('app_forgot_password_request')}}" class="forget_password">mot de passe oublier</a>
+				</div>
+				<div class="btn">
+					<a href="{{path('app_register')}}" class="signup">Créer son compte</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% block footer %}{% endblock %}
+{% endblock %}

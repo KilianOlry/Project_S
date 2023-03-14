@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% block title %}Register
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/registration.css') }}">
+{% endblock %}
+
+
+{% block body %}
+	<div class="slide"></div>
+	{% for flash_error in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+	{% endfor %}
+	<section class="main">
+		<div class="container">
+			<h2>Création de compte</h2>
+
+			<div class="formulaire">
+				{{ form_start(registrationForm) }}
+				<div class="first">
+
+					<div class="prenom">
+
+						{{ form_row(registrationForm.prenom) }}
+					</div>
+
+					<div class="nom">
+						{{ form_row(registrationForm.nom) }}
+					</div>
+				</div>
+
+
+				<div class="second">
+					<div class="tel">
+						{{ form_row(registrationForm.telephone) }}
+					</div>
+					<div class="date">
+						{{ form_row(registrationForm.metier) }}
+					</div>
+				</div>
+				<div class="mail">
+					{{ form_row(registrationForm.email) }}
+				</div>
+				<div class="mdp">
+					{{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+				</div>
+
+			</div>
+			{{ form_row(registrationForm.agreeTerms, {'attr': {'class':'required'}}) }}
+			<div class="btn_2">
+				<div class="create">
+					<button type="submit" class="btn">Créer son compte</button>
+					{{ form_end(registrationForm) }}
+				</div>
+			</div>
+		</div>
+
+	</section>
+	{% block footer %}{% endblock %}
+{% endblock %}

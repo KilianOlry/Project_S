@@ -244,7 +244,7 @@ p {
 }
 body {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 }
 
 .main {
@@ -265,54 +265,21 @@ body {
   flex-direction: column;
   border-radius: var(--border-radius-input);
   box-shadow: var(--box-shadow);
+  padding: 1rem;
 }
-.container h2 {
+.container h1 {
   font-size: var(--normal-size);
   text-align: center;
-  display: flex;
   text-transform: uppercase;
   margin: 2rem 0;
   color: black;
 }
-
-.formulaire {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 0 2rem;
-}
-.formulaire input {
-  width: 100%;
-  border: none;
-  border-radius: var(--border-radius-input);
-  padding: 1rem 0;
-  margin-top: 0.5rem;
-}
-.formulaire input::placeholder {
-  padding-left: 1rem;
-}
-.formulaire .checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.formulaire label {
+.container label {
   font-size: var(--smaller-size);
 }
 
-.btn_2 {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  margin: 2rem 1rem;
-  padding: 0.5rem;
-}
-.login {
-  text-align: center;
-  margin-top: 1.5rem;
-}
-.login .submit {
+.btn {
+  margin: 2rem 0;
   width: auto;
   padding: 1rem 0.5rem;
   font-size: var(--smaller-size);
@@ -320,54 +287,21 @@ body {
   border-radius: var(--border-radius-input);
   text-transform: uppercase;
   cursor: pointer;
-  padding: 1rem 2rem;
-  background-color: var(--color-blue);
   color: var(--color-white);
-}
-
-@media (max-width: 400px) {
-  button {
-    font-size: var(--smalling-size);
-  }
-}
-
-.submit {
   background-color: var(--color-blue);
-}
-@media (max-width: 400px) {
-  .submit {
-    font-size: var(--smalling-size);
-  }
+  padding: 1rem;
 }
 
-.forget_password {
-  padding: 1rem 0.5rem;
+.formulairelol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.formulairelol .info {
   font-size: var(--smaller-size);
-  border: none;
-  border-radius: var(--border-radius-input);
-  text-transform: uppercase;
-  cursor: pointer;
-  background-color: var(--color-orange);
-}
-@media (max-width: 400px) {
-  .forget_password {
-    font-size: var(--smalling-size);
-  }
+  text-align: center;
 }
 
-.signup {
-  padding: 1rem 0.5rem;
-  font-size: var(--smaller-size);
-  border: none;
-  border-radius: var(--border-radius-input);
-  text-transform: uppercase;
-  cursor: pointer;
-  background-color: var(--color-yellow);
-}
-@media (max-width: 400px) {
-  .signup {
-    font-size: var(--smalling-size);
-  }
-}
-
-/*# sourceMappingURL=login.css.map */
+/*# sourceMappingURL=reset-mdp.css.map */
