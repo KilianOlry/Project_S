@@ -1,0 +1,23 @@
+{
+  "name": "project_s",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass -w ./public/assets/scss:./public/assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KilianOlry/Project_S.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KilianOlry/Project_S/issues"
+  },
+  "homepage": "https://github.com/KilianOlry/Project_S#readme"
+}

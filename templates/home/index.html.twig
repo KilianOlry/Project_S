@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+{% block title %}Accueil
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+{% endblock %}
+
+{% block body %}
+
+
+	<section class="container_picture">
+		<div id="carousel">
+			<div class="slide">
+				<h5>jusqu'à 4 mois d'assurance gratuits</h5>
+				<p>PREMIUM RÉSERVISTE</p>
+				<a href="./asset/pages/infoGlobale.html" class="btn">profitez de notre offre</a>
+			</div>
+			<div class="slide">
+				<p>Assurance Auto</p>
+				<a href="#" class="btn">profitez de notre offre</a>
+			</div>
+			<div class="slide">
+
+				<p>INITIO</p>
+				<a href="#" class="btn">profitez de notre offre</a>
+			</div>
+			<a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+
+	</section>
+
+	<section class="main">
+		<div class="container-about">
+			<div class="about">
+				<h1>SERVICE D'ASSURANCE RÉSERVÉ AU PERSONNEL DE LA GENDARMERIE NATIONALE</h1>
+				<p>
+					Notre mission à nous, c'est vous !
+																																																																																
+																										Spécialiste de l'assurance de la Gendarmerie Nationale, en cas de sinistre, comme au quotidien, vous
+																										pouvez compter sur nous.
+																										C'est notre mission depuis près de 50 ans déjà !
+																										Nous ne sommes pas un plateau téléphonique anonyme, au SARPGN un Conseiller vous est personnellement
+																										 dédié.
+																										Au moment de choisir une garantie, il est indispensable de se poser les bonnes questions. Votre
+																										Conseiller, spécialiste de la protection des biens et des personnes, fait le bon diagnostic et vous
+																									propose la solution la mieux adaptée à vos besoins.
+																									Au sein des écoles de formation initiale, le Conseiller SARPGN prend le temps d'expliquer aux élèves
+																										le contenu des garanties proposées. Réactivité et disponibilité, c'est pour lui une mission toute
+															                                        naturelle puisque, ancien gendarme, il était à leur place quelques années plus tôt.</p>
+			</div>
+		</div>
+
+		<div class="container_cards">
+			<div class="card">
+				<div class="contain img-left"></div>
+				<div class="contain_text">
+					<h3>30 000
+						<br>assurés gendarmes</h3>
+					<p class="stat-paragraphe">actifs et retraités</p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="contain img-mid"></div>
+				<div class="contain_text">
+					<h3>86 000<br>contrats suivis</h3>
+					<p class="stat-paragraphe">par des conseillers personnels dédiés</p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="contain img-right"></div>
+				<div class="contain_text">
+					<h3>40<br>hommes et femmes</h3>
+					<p class="stat-paragraphe">à votre écoute et à votre service</p>
+				</div>
+			</div>
+		</div>
+
+	</section>
+{% endblock %}
