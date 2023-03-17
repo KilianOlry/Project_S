@@ -49,7 +49,7 @@
 				{% if app.user %}
 					{% if is_granted ('ROLE_ADMIN') %}
 						<li class="navbar__link four">
-							<a href="">Espace Admin</a>
+							<a href="{{path ("app_admin_user_index")}}">Espace Admin</a>
 						</li>
 					{% else %}
 						<li class="navbar__link four">
