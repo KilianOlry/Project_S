@@ -1,0 +1,167 @@
+.actions {
+  display: flex;
+  gap: 1.3rem;
+}
+
+.main-content {
+  margin-left: 165px;
+  width: calc(100% - 165px);
+  transition: margin-left 300ms;
+}
+
+main {
+  margin-top: 60px;
+  .page-header h1 {
+    margin-top: 3rem;
+  }
+  .page-content {
+    padding: 1.3rem 1rem;
+    background: #f1f4f9;
+  }
+}
+
+.records {
+  box-shadow: 0px 5px 5px -5px rgb(0 0 0 / 10%);
+  background: #fff;
+  border-radius: 3px;
+}
+
+.record-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .add button {
+    background: var(--color-blue);
+    color: #fff;
+    height: 37px;
+    border-radius: 4px;
+    padding: 0rem 1rem;
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.add,
+.browse {
+  display: flex;
+  align-items: center;
+}
+
+.add span {
+  display: inline-block;
+  margin-right: 0.6rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+input,
+button,
+select {
+  outline: none;
+}
+
+.add select,
+.browse input,
+.browse select {
+  height: 35px;
+  border: 1px solid #b0b0b0;
+  border-radius: 3px;
+  display: inline-block;
+  width: 75px;
+  padding: 0rem 0.5rem;
+  margin-right: 0.8rem;
+  color: #666;
+}
+
+.browse input {
+  width: 150px;
+}
+
+.browse select {
+  width: 100px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow: auto;
+}
+
+table {
+  border-collapse: collapse;
+
+  thead {
+    tr {
+      background: #e9edf2;
+    }
+
+    th {
+      padding: 1rem 0rem;
+      text-align: left;
+      color: #444;
+      font-size: 1.3rem;
+    }
+  }
+
+  tbody {
+    td {
+      padding: 1rem 0rem;
+      color: #444;
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid #dee2e8;
+  }
+}
+
+table thead th:first-child {
+  padding-left: 1rem;
+}
+
+table tbody td:first-child {
+  padding-left: 1rem;
+  color: var(--color-blue);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.client {
+  display: flex;
+  align-items: center;
+
+  .client-img {
+    margin-right: 0.5rem;
+    border: 2px solid #b0b0b0;
+    height: 45px;
+    width: 45px;
+  }
+
+  .client-info h4 {
+    color: #555;
+    font-size: 1.3rem;
+  }
+
+  .client-info small {
+    color: #777;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  table {
+    width: 900px;
+  }
+}
+
+.green {
+  color: green;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}Tableau de bord
+			{% endblock %}
+			- Sarpgn
+		</title>
+
+		{% block stylesheets %}{% endblock %}
+		<link rel="stylesheet" href="{{ asset('assets/css/variables.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/base-admin.css') }}">
+
+	</head>
+
+	<body>
+	<div class="main-content">
+    		{% include "Components/adminSideMenu.html.twig" %}
+		<main>
+	    {% include "Components/adminHeader.html.twig" %}
+		{% block body %}{% endblock %}
+		</main>
+	</div>
+
+	</body>
+</html>
