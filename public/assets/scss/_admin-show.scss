@@ -1,0 +1,39 @@
+.user_arry {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_user {
+  padding: 0 10px;
+  width: 50%;
+  @include medium-tablette {
+    width: 100%;
+  }
+  h2 {
+    font-size: var(--medium-size);
+    margin-bottom: 3rem;
+  }
+  .card {
+    border-radius: 18px;
+    box-shadow: 1px 1px 8px 0 grey;
+    padding: 20px 0 20px 50px;
+    table {
+      width: 80%;
+      height: 300px;
+      @include medium-tablette {
+        width: 100%;
+      }
+    }
+    .card-body {
+      position: relative;
+      .edit {
+        position: absolute;
+        color: var(--color-blue);
+        right: 3rem;
+        top: 2rem;
+        cursor: pointer;
+        font-size: var(--medium-size);
+      }
+    }
+  }
+}

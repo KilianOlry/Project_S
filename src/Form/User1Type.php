@@ -8,7 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class UserType extends AbstractType
+class User1Type extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -17,14 +17,15 @@ class UserType extends AbstractType
             ->add('password', TextType::class, [
                 'mapped' => false
             ])
-            ->add('prenom')
+            ->add('prenom', TextType::class,[
+                'label'=>'Ton prénom'
+            ])
             ->add('nom')
             ->add('telephone')
             ->add('metier')
             ->add('adresse')
             ->add('codePostal')
             ->add('ville')
-            ->add('isVerified')
         ;
     }
 
