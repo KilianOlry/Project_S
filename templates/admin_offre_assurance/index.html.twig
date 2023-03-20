@@ -1,0 +1,39 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Assurances{% endblock %}
+
+{% block body %}
+    <h1>OffreAssurance</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Slug</th>
+                <th>Fichier</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offre_assurance in offre_assurances %}
+            <tr>
+                <td>{{ offre_assurance.id }}</td>
+                <td>{{ offre_assurance.titre }}</td>
+                <td>{{ offre_assurance.slug }}</td>
+                <img src="{{asset(path('assets/uploads/' ~ offre_assurance.fichier ))}}" alt="" srcset="">
+                <td>
+                    <a href="{{ path('app_admin_offre_assurance_show', {'id': offre_assurance.id}) }}">show</a>
+                    <a href="{{ path('app_admin_offre_assurance_edit', {'id': offre_assurance.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_admin_offre_assurance_new') }}">Create new</a>
+{% endblock %}

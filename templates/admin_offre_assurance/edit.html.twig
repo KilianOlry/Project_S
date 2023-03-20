@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit OffreAssurance{% endblock %}
+
+{% block body %}
+    <h1>Edit OffreAssurance</h1>
+
+    {{ include('admin_offre_assurance/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_admin_offre_assurance_index') }}">back to list</a>
+
+    {{ include('admin_offre_assurance/_delete_form.html.twig') }}
+{% endblock %}

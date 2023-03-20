@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New OffreAssurance{% endblock %}
+
+{% block body %}
+    <h1>Create new OffreAssurance</h1>
+
+    {{ include('admin_offre_assurance/_form.html.twig') }}
+
+    <a href="{{ path('app_admin_offre_assurance_index') }}">back to list</a>
+{% endblock %}
