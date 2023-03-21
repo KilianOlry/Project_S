@@ -1,4 +1,39 @@
-{{ form_start(form) }}
+{# {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{{ form_end(form) }} #}
+
+<main class="sign-up">
+   
+     
+      <div class="sign-up__content">
+        {{ form_start(form, {'attr': {'class':'sign-up__form form'}}) }}
+          <div class="form__row form__row--two">
+            <div class="input form__inline-input">
+              <div class="input__container">
+                  {{ form_row(form.titre, {'attr': {'class':'input__field'}}) }}
+              </div>
+            </div>
+            <div class="input form__inline-input">
+              <div class="input__container">
+    {{ form_row(form.slug, {'attr': {'class':'input__field'}}) }}
+              </div>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="input">
+              <div class="input__container">
+    {{ form_row(form.fichier, {'attr': {'class':'input__field'}}) }}
+              </div>
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="component component--primary form__button">
+     <button class="btn">{{ button_label|default('Save') }}</button> 
+               </div>
+          </div>
+        {{ form_end(form) }}
+      </div>
+    </div>
+  </main>
+

@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 
-{% block title %}Edit OffreAssurance{% endblock %}
+{% block title %}Modifier {% endblock %}
 
 {% block body %}
-    <h1>Edit OffreAssurance</h1>
+    <h1>Modifier l'offre {{offre_assurance.titre}}</h1>
 
-    {{ include('admin_offre_assurance/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin_offre_assurance/_form.html.twig', {'button_label': 'Modifier'}) }}
 
     <a href="{{ path('app_admin_offre_assurance_index') }}">back to list</a>
 

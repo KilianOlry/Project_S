@@ -1,11 +1,49 @@
-{% extends 'base.html.twig' %}
+{% extends 'base-admin.html.twig' %}
 
 {% block title %}New OffreAssurance{% endblock %}
 
 {% block body %}
-    <h1>Create new OffreAssurance</h1>
+    <h1>Créer nouvelle offre d'assurance</h1>
 
     {{ include('admin_offre_assurance/_form.html.twig') }}
 
     <a href="{{ path('app_admin_offre_assurance_index') }}">back to list</a>
 {% endblock %}
+
+
+<h1>Modification de l'offre {{ offre_assurance.titre }}</h1>
+
+<div class="user_arry">
+			<div class="main_user">
+        <div class="card">
+            <div class="card-body">
+
+			<a href="{{ path('app_admin_offre_assurance_edit', {'id': offre_assurance.id}) }}"><i class="fa fa-pen fa-xs edit"></i></a>
+            
+    {{ include('admin_offre_assurance/_delete_form.html.twig') }}
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Titre</td>
+                            <td>{{ offre_assurance.titre}}</td>
+                        </tr>
+                        <tr>
+                            <td>Id </td>
+                            <td>{{ offre_assurance.id }}</td>
+                        </tr>
+                        <tr>
+                            <td>Fichier</td>
+                            <td>
+                             <img src="{{ asset('/assets/uploads/' ~ offre_assurance.fichier) }}" alt="Photo illustrant l'assurance" width="150px" height="80px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Slug</td>
+                            <td>{{ offre_assurance.slug }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>

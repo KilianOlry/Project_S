@@ -287,6 +287,10 @@ table tr {
   border-bottom: 1px solid #dee2e8;
 }
 
+.btn {
+  background-color: transparent;
+}
+
 table thead th:first-child {
   padding-left: 1rem;
 }
