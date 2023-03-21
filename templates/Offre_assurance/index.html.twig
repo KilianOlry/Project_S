@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/nos-offres.css') }}">
+{% endblock %}
+{% block title %}OffreAssurance index{% endblock %}
+
+{% block body %}
+
+
+<section class="container_picture">
+		<div id="carousel">
+			<div class="slide">
+				<h5>jusqu'à 4 mois d'assurance gratuits</h5>
+				<p>PREMIUM RÉSERVISTE</p>
+				<a href="./asset/pages/infoGlobale.html" class="btn">profitez de notre offre</a>
+			</div>
+			<div class="slide">
+				<p>Assurance Auto</p>
+				<a href="#" class="btn">profitez de notre offre</a>
+			</div>
+			<div class="slide">
+
+				<p>INITIO</p>
+				<a href="#" class="btn">profitez de notre offre</a>
+			</div>
+			<a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+
+	</section>
+
+<main>
+        {% for offre_assurance in offre_assurances %}
+
+<div class="card">
+            <div class="contain img-left">
+                <img src="{{ asset('/assets/uploads/' ~ offre_assurance.fichier) }}" alt="">
+            </div>
+            <div class="contain_text">
+                <a href="{{path ('app_info_details')}}">{{ offre_assurance.titre }}</a>
+            </div>
+        </div>
+
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </main>
+{% endblock %}
