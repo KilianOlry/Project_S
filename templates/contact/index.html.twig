@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/contact.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="slide"></div>
+
+
+	<div class="contactUs">
+		<div class="title">
+			<h2>Get in Touch</h2>
+		</div>
+		<div class="box">
+			<div class="contact form">
+				<h3>Send a message</h3>
+				{{ form_start(form) }}
+				<div class="formBox">
+					<div class="row50">
+						<div class="inputBox">
+							{{ form_row(form.email, {'attr': {'class':'inputBox'}}) }}
+						</div>
+					</div>
+					<div class="row50">
+						<div class="inputBox">
+							{{ form_row(form.objet, {'attr': {'class':'inputBox'}}) }}
+						</div>
+					</div>
+					<div class="row100">
+						<div class="inputBox">
+							<span>Message</span>
+							{{ form_row(form.message, {'attr': {'class':'inputBox'}}) }}
+						</div>
+					</div>
+					<div class="row100">
+						<div class="inputBox">
+							{{ form_end(form) }}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="contact info">
+				<h3>Contact info</h3>
+				<div class="infoBox">
+					<div>
+						<span>
+							<i class="fa-solid fa-location-dot"></i>
+						</span>
+						<p>Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div>
+						<span>
+							<i class="fa-solid fa-envelope"></i>
+						</span>
+						<a href="">loremkork@gmail</a>
+					</div>
+					<div>
+						<span>
+							<i class="fa-solid fa-phone"></i>
+						</span>
+						<a href="">023896551</a>
+					</div>
+					<ul class="sci">
+						<li>
+							<a href="">
+								<i class="fa-brands fa-facebook"></i>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="fa-brands fa-linkedin"></i>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="fa-brands fa-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="fa-brands fa-instagram"></i>
+							</a>
+						</li>
+						<li>
+							<a href=""></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="contact map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2674.5054845976906!2d1.897375351519978!3d47.90725597910362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e4fb2aa1709a65%3A0xdadb9d1d1c7a3b9f!2sSARPGN!5e0!3m2!1sfr!2sfr!4v1676621950408!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
