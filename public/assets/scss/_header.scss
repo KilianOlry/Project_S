@@ -23,18 +23,6 @@
     }
 
     /* logo Classe pour le svg */
-    .st0 {
-        fill: var(--color-blue);
-    }
-
-    .st1 {
-        fill: var(--color-orange);
-    }
-
-    .st2 {
-        fill: var(--color-yellow);
-    }
-
     .nav_menu {
         overflow: hidden;
         @include flex-jccenter;

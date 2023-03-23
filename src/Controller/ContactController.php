@@ -36,11 +36,10 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             // Récupération des données et tockage dans variables différentes
+
             $address = $form->get('email')->getData();
             $objet = $form->get('objet')->getData();
             $message = $form->get('message')->getData();
-
-
 
 
             // Création de l'email contenant les data du formulaire

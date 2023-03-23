@@ -76,6 +76,18 @@ p {
   fill: var(--color-blue);
 }
 
+.st0 {
+  fill: var(--color-blue);
+}
+
+.st1 {
+  fill: var(--color-orange);
+}
+
+.st2 {
+  fill: var(--color-yellow);
+}
+
 /* HEADER */
 .nav {
   position: fixed;
@@ -99,15 +111,6 @@ p {
 .nav header .container_header .container_logo {
   display: flex;
   align-items: center;
-}
-.nav .st0 {
-  fill: var(--color-blue);
-}
-.nav .st1 {
-  fill: var(--color-orange);
-}
-.nav .st2 {
-  fill: var(--color-yellow);
 }
 .nav .nav_menu {
   overflow: hidden;

@@ -76,6 +76,18 @@ p {
   fill: var(--color-blue);
 }
 
+.st0 {
+  fill: var(--color-blue);
+}
+
+.st1 {
+  fill: var(--color-orange);
+}
+
+.st2 {
+  fill: var(--color-yellow);
+}
+
 .sidebar {
   position: fixed;
   height: 100%;

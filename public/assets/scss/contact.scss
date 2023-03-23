@@ -5,18 +5,11 @@
 .contactUs {
     position: relative;
     width: 100%;
-    padding: 40px 100px;
-    margin-top: 5rem;
+    padding: 0px 100px;
+    margin-top: 8rem;
 
     .title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2em;
-
-        h2 {
-            font-weight: 500;
-        }
+        @include flex-jccenter-ai-center;
     }
 }
 
@@ -53,7 +46,6 @@
     h3 {
         color: #0e3959;
         font-weight: 500;
-        font-style: 1.4em;
         margin-bottom: 10px;
     }
 }
@@ -66,56 +58,48 @@
     .row50 {
         display: flex;
         gap: 20px;
-    }
 
-    .inputBox {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10px;
-        width: 50%;
-
-        span {
-            color: #18b177;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        input {
-            padding: 10px;
-            font-size: 1.1em;
-            outline: none;
-            border: 1px solid #333;
-        }
-
-        textarea {
-            padding: 10px;
-            font-size: 1.1em;
-            outline: none;
-            border: 1px solid #333;
-            resize: none;
-            min-height: 220px;
+        .inputBox {
+            display: flex;
+            flex-direction: column;
             margin-bottom: 10px;
-        }
-
-        .submit {
-            background-color: #ff578b;
-            color: #fff;
-            border: none;
-            font-size: 1.1em;
-            max-width: 120px;
-            font-weight: 500;
-            cursor: pointer;
-            padding: 14px 15px;
+            width: 100%;
         }
     }
 
-    .row100 .inputBox {
-        width: 100%;
+    span {
+        color: #18b177;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    input {
+        padding: 10px;
+    }
+
+    textarea {
+        padding: 10px;
+        font-size: 1.1em;
+        outline: none;
+        border: 1px solid #333;
+        resize: none;
+        min-height: 220px;
+        margin-bottom: 10px;
+    }
+
+    .submit {
+        background-color: var(--color-blue);
+        color: #fff;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 15px 25px;
+        border-radius: 2px;
     }
 }
 
-.inputBox ::placeholder {
-    color: #ff578b;
+.row100 .inputBox {
+    width: 100%;
 }
 
 .info {
@@ -123,55 +107,28 @@
 
     h3 {
         color: #fff;
-    }
-}
-
-.info .infoBox div {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.info .infoBox div span {
-    min-width: 40px;
-    height: 40px;
-    color: #fff;
-    background: #18b7ff;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 1.5em;
-    margin-right: 15px;
-}
-
-.info .infoBox div p {
-    color: #fff;
-    font-size: 1.1em;
-}
-
-.info .infoBox div a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-.sci {
-    margin-top: 40px;
-    display: flex;
-}
-
-.sci li {
-    list-style: none;
-    margin-right: 15px;
-
-    a {
-        color: #ccc;
-        font-size: 2em;
+        font-size: var(--medium-size);
     }
 
-    &:hover {
-        color: #fff;
+    .infoBox div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        margin: 3rem 0;
+
+        span {
+            min-width: 40px;
+            height: 40px;
+            color: #fff;
+            background: var(--color-blue);
+            @include flex-jccenter-ai-center;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        a {
+            font-size: 1.5rem;
+        }
     }
 }
 
@@ -202,13 +159,7 @@
         min-height: 300px;
     }
 
-    .formBox .row50 {
-        display: flex;
-        gap: 0;
-        flex-direction: column;
-    }
-
-    .inputBox {
+    .formBox .inputBox {
         width: 100%;
     }
 

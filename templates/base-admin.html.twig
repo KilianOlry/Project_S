@@ -9,21 +9,21 @@
 			{% endblock %}
 			- Sarpgn
 		</title>
-
-		{% block stylesheets %}{% endblock %}
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet"> {% block stylesheets %}{% endblock %}
 		<link rel="stylesheet" href="{{ asset('assets/css/variables.css') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/base-admin.css') }}">
 
 	</head>
 
 	<body>
-	<div class="main-content">
-    		{% include "Components/adminSideMenu.html.twig" %}
-		<main>
-	    {% include "Components/adminHeader.html.twig" %}
-		{% block body %}{% endblock %}
-		</main>
-	</div>
-<script src="https://kit.fontawesome.com/817262485e.js" crossorigin="anonymous"></script>
+		<div class="main-content">
+			{% include "Components/adminSideMenu.html.twig" %}
+			<main>
+				{% include "Components/adminHeader.html.twig" %}
+				{% block body %}{% endblock %}
+			</main>
+		</div>
+		<script src="https://kit.fontawesome.com/817262485e.js" crossorigin="anonymous"></script>
 	</body>
 </html>
