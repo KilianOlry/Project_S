@@ -294,6 +294,7 @@ table thead th {
 table tbody td {
   padding: 1rem 0rem;
   color: #444;
+  font-size: 1.3rem;
 }
 table tr {
   border-bottom: 1px solid #dee2e8;

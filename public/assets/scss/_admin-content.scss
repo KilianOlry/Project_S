@@ -11,9 +11,11 @@
 
 main {
   margin-top: 60px;
+
   .page-header h1 {
     margin-top: 3rem;
   }
+
   .page-content {
     padding: 1.3rem 1rem;
     background: #f1f4f9;
@@ -111,6 +113,7 @@ table {
     td {
       padding: 1rem 0rem;
       color: #444;
+      font-size: 1.3rem;
     }
   }
 
@@ -118,9 +121,11 @@ table {
     border-bottom: 1px solid #dee2e8;
   }
 }
+
 .btn {
   background-color: transparent;
 }
+
 table thead th:first-child {
   padding-left: 1rem;
 }
