@@ -16,6 +16,8 @@ class OffreAssuranceController extends AbstractController
     #[Route('/', name: 'app_Offre_assurance_index', methods: ['GET'])]
     public function index(OffreAssuranceRepository $offreAssuranceRepository): Response
     {
+
+        // méthode findall sert à faire la liste de chaque donnée de cette colone dans le fichier twig correspondant
         return $this->render('Offre_assurance/index.html.twig', [
             'offre_assurances' => $offreAssuranceRepository->findAll(),
         ]);

@@ -10,31 +10,38 @@
 			- Sarpgn
 		</title>
 
+{# Le lien de la font #}
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link
 		href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
 
-		<!-- Feuilles de styles -->
 
+		{# On importe le fichier conteant les variables scss #}
 
 		{% block stylesheets %}{% endblock %}
 		<link rel="stylesheet" href="{{ asset('assets/css/variables.css') }}">
 
 	</head>
 	<body>
-
+{# On importe la navbar dans ce fichier de façon à ce qu'elle soit présentes dans chaque page qui extend base.html.twig#}
 		{% include "Components/nav.html.twig" %}
 
+		{# On importe la div slide dans ce fichier #}
 		{% block body %}
 			<div class="slide"></div>
 		{% endblock %}
 
+
+{# On importe la footer dans ce fichier de façon à ce qu'elle soit présentes dans chaque page qui extend base.html.twig#}
 		{% block footer %}
 			{% include "Components/footer.html.twig" %}
 		{% endblock %}
+
+
 		{% block javascripts %}{% endblock %}
 
 		<!-- Fichiers JS -->
+{# On importe le JS dans ce fichier de façon à ce qu'il soit présentes dans chaque page qui extend base.html.twig#}
 
 		<script src="{{ asset('assets/js/script.js')}}">
 			defer</script>

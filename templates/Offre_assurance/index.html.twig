@@ -2,7 +2,7 @@
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('assets/css/nos-offres.css') }}">
 {% endblock %}
-{% block title %}OffreAssurance index
+{% block title %}Offres Assurance
 {% endblock %}
 
 {% block body %}
@@ -32,7 +32,7 @@
 
 	<main>
 
-		{# Une boucle for afin d'affihcer toute les offres présentes dans la BDD #}
+		{# Une boucle for afin d'afficher toute les offres présentes dans la BDD #}
 
 		{% for offre_assurance in offre_assurances %}
 
@@ -41,7 +41,7 @@
 					<img src="{{ asset('/assets/uploads/' ~ offre_assurance.fichier) }}" alt="">
 				</div>
 				<div class="contain_text">
-					<a href="">{{ offre_assurance.titre }}</a>
+					<a href="{{path ('app_info_global')}}">{{ offre_assurance.titre }}</a>
 				</div>
 			</div>
 

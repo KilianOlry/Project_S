@@ -293,14 +293,10 @@ footer .legale a {
 }
 
 .container_picture1 {
-  background-image: url(../images/gendarmerie-3.png);
+  background-image: url(../images/Banniere.jpeg);
   background-size: cover;
-  background-position: center;
   width: 100%;
   height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .main {
@@ -362,6 +358,25 @@ footer .legale a {
   color: var(--color-blue);
 }
 
+.container_carousel {
+  margin: 8rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .container_carousel {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+.container_carousel .img_promo {
+  width: 300px;
+}
+.container_carousel .img_promo img {
+  width: 100%;
+}
 .container_carousel .cards_carousel {
   height: 250px;
   width: 400px;
@@ -413,18 +428,19 @@ footer .legale a {
 .container_confirm {
   display: flex;
   padding: 50px;
-  justify-content: flex-end;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
 }
 .container_confirm .btn_infos {
-  background-color: var(--color-orange);
+  background-color: var(--color-blue);
   width: 150px;
   height: 30px;
   margin: 50px;
   border-radius: 15px;
   border: none;
   box-shadow: var(--box-shadow);
+  border-radius: 5px;
+  background-color: var(--color-orange);
 }
 .container_confirm .btn_infos:hover {
   transform: scale(1.1);
@@ -442,10 +458,7 @@ footer .legale a {
   border-radius: 15px;
   border: none;
   box-shadow: var(--box-shadow);
-}
-.container_confirm .img_promo {
-  height: 300px;
-  width: 300px;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=info-global.css.map */
