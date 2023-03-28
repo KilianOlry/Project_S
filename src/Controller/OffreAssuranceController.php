@@ -30,4 +30,13 @@ class OffreAssuranceController extends AbstractController
             'controller_name' => 'HomepageController',
         ]);
     }
+
+
+    #[Route('/premium-reserviste/detail', name: 'app_info_detail')]
+    public function details(): Response
+    {
+        return $this->render('InfoDetail/index.html.twig', [
+            'controller_name' => 'HomepageController',
+        ]);
+    }
 }
