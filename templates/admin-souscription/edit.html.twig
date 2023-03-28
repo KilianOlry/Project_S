@@ -1,0 +1,13 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Edit Contrat{% endblock %}
+
+{% block body %}
+    <h1>Modification du contrat de {{contrat.prenom}} {{contrat.nom}}</h1>
+
+    {{ include('admin-souscription/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_souscription_index') }}">back to list</a>
+
+    {{ include('admin-souscription/_delete_form.html.twig') }}
+{% endblock %}

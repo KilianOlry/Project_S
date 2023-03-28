@@ -11,32 +11,61 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
-#[Route('/souscription')]
-class SouscriptionController extends AbstractController
+#[Route('/admin/souscription')]
+class AdminSouscriptionController extends AbstractController
 {
     #[Route('/', name: 'app_souscription_index', methods: ['GET'])]
     public function index(ContratRepository $contratRepository): Response
     {
-        return $this->render('souscription/index.html.twig', [
+        return $this->render('admin-souscription/index.html.twig', [
             'contrats' => $contratRepository->findAll(),
         ]);
     }
 
     #[Route('/new', name: 'app_souscription_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, ContratRepository $contratRepository): Response
+    public function new(Request $request, ContratRepository $contratRepository, SluggerInterface $slugger): Response
     {
         $contrat = new Contrat();
         $form = $this->createForm(ContratType::class, $contrat);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $image = $form->get('reservisteFiles')->getData();
+
+            //renommage du fichier
+            // this condition is needed because the 'brochure' field is not required
+            // so the PDF file must be processed only when a file is uploaded
+            if ($image) {
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$image->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $image->move(
+                        $this->getParameter('ContratImage'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $contrat->setReservisteFiles($newFilename);
+            }
+
             $contratRepository->save($contrat, true);
 
             return $this->redirectToRoute('app_souscription_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('souscription/new.html.twig', [
+        return $this->renderForm('admin-souscription/new.html.twig', [
             'contrat' => $contrat,
             'form' => $form,
         ]);
@@ -45,7 +74,7 @@ class SouscriptionController extends AbstractController
     #[Route('/{id}', name: 'app_souscription_show', methods: ['GET'])]
     public function show(Contrat $contrat): Response
     {
-        return $this->render('souscription/show.html.twig', [
+        return $this->render('admin-souscription/show.html.twig', [
             'contrat' => $contrat,
         ]);
     }
@@ -62,7 +91,7 @@ class SouscriptionController extends AbstractController
             return $this->redirectToRoute('app_souscription_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('souscription/edit.html.twig', [
+        return $this->renderForm('admin-souscription/edit.html.twig', [
             'contrat' => $contrat,
             'form' => $form,
         ]);
@@ -83,7 +112,7 @@ class SouscriptionController extends AbstractController
     {
        $dompdf = new Dompdf();
 
-       $html = $this->renderView('souscription/pdf.html.twig', [
+       $html = $this->renderView('admin-souscription/pdf.html.twig', [
         'contrat'=> $contrat
        ]);
 

@@ -1,0 +1,114 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}Contrat
+{% endblock %}
+
+{% block body %}
+	<h1>Détails du contrat de
+		{{contrat.prenom}}</h1>
+
+	<div class="user_arry">
+		<div class="main_user">
+			<div class="card">
+				<div class="card-body">
+					<a href="{{ path('app_souscription_edit', {'id': contrat.id}) }}">
+						<i class="fa fa-pen fa-xs edit"></i>
+					</a>
+					<table>
+						<tbody>
+							<tr>
+								<td>ID</td>
+								<td>{{ contrat.id }}</td>
+							</tr>
+							<tr>
+								<td>Civilite</td>
+								<td>{{ contrat.civilite }}</td>
+							</tr>
+							<tr>
+								<td>Nom</td>
+								<td>{{ contrat.nom }}</td>
+							</tr>
+							<tr>
+								<td>DateNaissance</td>
+								<td>{{ contrat.dateNaissance }}</td>
+							</tr>
+							<tr>
+								<td>NomNaissance</td>
+								<td>{{ contrat.nomNaissance }}</td>
+							</tr>
+							<tr>
+								<td>PaysNaissance</td>
+								<td>{{ contrat.paysNaissance }}</td>
+							</tr>
+							<tr>
+								<td>Email</td>
+								<td>{{ contrat.email }}</td>
+							</tr>
+							<tr>
+								<td>Adresse</td>
+								<td>{{ contrat.adresse }}</td>
+							</tr>
+							<tr>
+								<td>CodePostale</td>
+								<td>{{ contrat.codePostale }}</td>
+							</tr>
+							<tr>
+								<td>Ville</td>
+								<td>{{ contrat.ville }}</td>
+							</tr>
+							<tr>
+								<td>Telephone</td>
+								<td>{{ contrat.telephone }}</td>
+							</tr>
+							<tr>
+								<td>Situation</td>
+								<td>{{ contrat.situation }}</td>
+							</tr>
+							<tr>
+								<td>NbReserviste</td>
+								<td>{{ contrat.nbReserviste }}</td>
+							</tr>
+							<tr>
+								<td>DateDelivrance</td>
+								<td>{{ contrat.dateDelivrance ? contrat.dateDelivrance|date('Y-m-d H:i:s') : '' }}</td>
+							</tr>
+							<tr>
+								<td>DateGarantie</td>
+								<td>{{ contrat.dateGarantie ? contrat.dateGarantie|date('Y-m-d H:i:s') : '' }}</td>
+							</tr>
+							<tr>
+								<td>SignatureId</td>
+								<td>{{ contrat.signatureId }}</td>
+							</tr>
+							<tr>
+								<td>DocumentId</td>
+								<td>{{ contrat.documentId }}</td>
+							</tr>
+							<tr>
+								<td>SignerId</td>
+								<td>{{ contrat.signerId }}</td>
+							</tr>
+							<tr>
+								<td>PdfNoFirm</td>
+								<td>{{ contrat.pdfNoFirm }}</td>
+							</tr>
+							<tr></tr>
+							<tr>
+								<td>
+									<a role="button" href="{{ path('app_souscription_signature', {'id': contrat.id}) }}">Envoyer la signature</a>
+								</td>
+							</tr>
+							<tr>
+								<td>ReservisteFiles</td>
+								<td>
+									<img src="{{ asset('/assets/uploads/contrats/' ~ contrat.reservisteFiles) }}" alt="Photo illustrant l'assurance" width="150px" height="80px">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</tbody></table><a href="{{ path('app_souscription_index') }}">back to list</a>{{ include('admin-souscription/_delete_form.html.twig') }}{% endblock %}{# <img src="{{ asset('/assets/uploads/' ~ offre_assurance.fichier) }}" alt="Photo illustrant l'assurance" width="150px" height="80px">
+	                            </td> #}
