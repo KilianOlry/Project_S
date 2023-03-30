@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/form.css') }}">
+{% endblock %}
+
+{% block title %}New Contrat
+{% endblock %}
+
+{% block body %}
+	<section class="main">
+		{{ include('souscritpion/_form.html.twig') }}
+	</section>
+
+	<script src="{{ asset('assets/js/script_form.js')}}">
+		defer</script>
+{% endblock %}
