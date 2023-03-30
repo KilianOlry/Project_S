@@ -1,0 +1,300 @@
+{# {{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+<div class="wrapper">
+	<div class="header">
+		<ul>
+			<li class="active form_1_progessbar">
+				<div>
+					<p>1</p>
+				</div>
+			</li>
+			<li class="form_2_progessbar">
+				<div>
+					<p>2</p>
+				</div>
+			</li>
+			<li class="form_3_progessbar">
+				<div>
+					<p>3</p>
+				</div>
+			</li>
+			<li class="form_4_progessbar">
+				<div>
+					<p>4</p>
+				</div>
+			</li>
+			<li class="form_5_progessbar">
+				<div>
+					<p>5</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<div class="form_wrap">
+		<div class="form_1 data_info">
+			<p>Demande de souscription<br>Prénium réserviste
+			</p>
+			{{ form_start(form, {'attr': {'class':'sign-up__form form'}}) }}
+			<div class="form_container">
+				<div class="input_wrap">
+					{{ form_row(form.civilite, {'attr': {'class':'input'}}) }}
+
+				</div>
+				<div class="input_wrap">
+					{{ form_row(form.prenom, {'attr': {'class':'input'}}) }}
+				</div>
+				<div class="input_wrap">
+					{{ form_row(form.nom, {'attr': {'class':'input'}}) }}
+				</div>
+				<div class="input_wrap">
+					{{ form_row(form.nomNaissance, {'attr': {'class':'input'}}) }}
+				</div>
+				<div class="input_wrap">
+					{{ form_row(form.dateNaissance, {'attr': {'class':'input'}}) }}
+
+				</div>
+				<div class="input_wrap">
+					{{ form_row(form.email, {'attr': {'class':'input'}}) }}
+				</div>
+			</div>
+		</div>
+		<div class="form_2 data_info" style="display: none;">
+			<p>Information complémentaires</p>
+
+			<div class="form_container">
+				<div class="input_wrap">
+					{{ form_row(form.paysNaissance, {'attr': {'class':'input'}}) }}
+				</div>
+				<div class="input_wrap">
+					{{ form_row(form.adresse, {'attr': {'class':'input'}}) }}
+				</div>
+				<div class="input_wrap">
+					{{ form_row(form.codePostale, {'attr': {'class':'input'}}) }}
+				</div>
+				<div class="input_wrap">
+					{{ form_row(form.ville, {'attr': {'class':'input'}}) }}
+				</div>
+				<div class="input_wrap">
+					{{ form_row(form.telephone, {'attr': {'class':'input'}}) }}
+				</div>
+				<div class="radio_input">
+					<p>Quelle est votre situation actuelle ?</p>
+					<p>Vous êtes réserviste ?</p>
+					<div
+						class="input_mix">
+						{# <div class="input1">
+																																																																																																						<input id="yes" name="reserviste" value="yes" type="radio">
+																																																																																																						<label style="font-weight: bold;" for="yes">OUI</label>
+																																																																																																					</div>
+																																																																																																					<div class="input2">
+																																																																																																						<input id="no" name="reserviste" value="no" type="radio">
+																																																																																																						<label style="font-weight: bold;" for="no">NON
+																																																																																																						</label>
+																																																																																														
+																																																																																																					</div> #}
+						{{ form_row(form.situation, {'attr': {'class':'input'}}) }}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form_3 data_info" style="display: none;">
+			<p>Vous êtes réserviste</p>
+			<form>
+				<div class="form_container">
+					<div class="input_check">
+						<button type="button" class="btn1">De la Gendarmerie Nationale
+						</button>
+						<button type="button" class="btn2">Du Ministère des Armées</button>
+						<button type="button" class="btn3">Civil de la Police Nationale
+						</button>
+					</div>
+
+
+					<div class="input_wrap2">
+						<div class="content_wrap">
+							{{ form_row(form.nbReserviste, {'attr': {'class':'input'}}) }}
+						</div>
+						<div class="content_wrap">
+							{{ form_row(form.dateDelivrance, {'attr': {'class':'input'}}) }}
+
+						</div>
+					</div>
+					<div style="text-align:center;" class="input_wrap">
+
+						<div class="container_upload">
+
+							<div class="select_upload">
+								{{ form_row(form.reservisteFiles, {'attr': {'class':'upload-box'}}) }}
+							</div>
+							<div class="select_upload">
+								<select style="text-align: center;" class="files" id="files2" name="files">
+									<option selected value="files_cart_id">Carte Réserviste en cours de validité
+									</option>
+									<option value="files_cart_r">Carte d’identité (recto-verso)
+									</option>
+									<option value="other">Autres
+									</option>
+								</select>
+								<input type="file" accept="image/png, image/jpeg" class="upload-box">
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="form_4 data_info" style="display: none;">
+				<p>PAGE EN COURS DE REALISATION</p>
+
+			</div>
+
+			<div class="form_5 data_info" style="display: none;">
+				<form>
+					<div class="form_container">
+						<div class="input_wrap">
+							<div class="card">
+								<div class="card-content">
+									<div id="header_final" class="header_final">
+										<p>Synthèse</p>
+										<div id="final" class="container_final">
+											<div class="text_content">
+												<h3>Demande de souscription Prémium Réserviste</h3>
+
+												<div class="container">
+													<h2>Je déclare
+													</h2>
+													<ul>
+														<li class="space_list">Être informé(e) que les données
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                recuillies dans ce
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                formulaire font l’objet d’un traitement par BARRUEL ET
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                GIRAUD - SARPGN à des fins de gestions et de suivi de
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                mes
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                devis et contrats, dans le respect de la réglementation
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                en
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                matière de protection des données personnelles. Dans ce
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                cadre, elles peuvent être communiquées à l’assureur, la
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                Mutuelle de Poitiers Assurances, ainsi qu’à ses
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                filiales.
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                L’ensemble des informations concernant la protection des
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                données personnelles est disponible sur le site
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                www.sarpgn.fr à la rubrique
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                Mentions Légales, ainsi que dans les Conditions
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                Générales du
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                contrat (article “Protection de la clientèle”)</li>
+														<li>En validant ce formulaire vous recevrez un mail vous
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                permettant d’accéder à la
+															<strong>signature
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																							                                                                    électronique</strong>
+															pour confirmer votre demande
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                de souscription .</li>
+
+													</ul>
+
+												</div>
+												<div class="input_checkbox">
+													<div class="container_checkbox">
+														<input type="checkbox" id="check_list" class="list_checkbox" name="check_list">
+														<label for="check_list">
+															Je reconnais avoir lu le texte des conditions générales
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                dans son intégralité<br>
+															et en accepter tous les
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                termes.
+															<a href="#" download="condition_génerales">Téléchargeable
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																							                                                                    ici</a>
+														</label>
+													</div>
+													<div class="container_checkbox">
+														<input type="checkbox" id="check_list2" class="list_checkbox" name="check_list">
+														<label for="check_list2">
+															Je reconnais avoir lu le texte décrivant l'IPPID et en
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                accepter tous les
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                termes.
+															<br><a href="/asset/images/Assurance%20Réserviste.pdf" download="exemplaire IPPID">Téléchargeable
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																							                                                                    ici</a>
+														</label>
+													</div>
+													<div class="container_checkbox">
+														<input type="checkbox" id="check_list3" class="list_checkbox" name="check_list">
+														<label for="check_list3">
+															Je reconnais avoir lu le texte des conditions générales
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                dans son intégralité<br>
+															et en accepter tous les
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						                                                                termes.
+															<a href="#" download="condition">Téléchargeable
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																							                                                                    ici</a>
+														</label>
+													</div>
+													<div class="container_checkbox">
+														{{ form_row(form.dateGarantie, {'attr': {'class':'input'}}) }}
+
+
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="btn">{{ button_label|default('Save') }}</button>
+					{{ form_end(form) }}
+
+
+				</div>
+
+
+				<div class="btns_wrap">
+					<div class="common_btns form_1_btns">
+
+						<button type="button" onclick="location.href='/asset/pages/garantie.html'" class="btn_back2">Précedent</button>
+
+						<button type="button" class="btn_next">Suivant
+						</button>
+					</div>
+					<div class="common_btns form_2_btns" style="display: none;">
+						<button type="button" class="btn_back">Précedent</button>
+						<button type="button" class="btn_next">Suivant
+						</button>
+					</div>
+					<div class="common_btns form_3_btns" style="display: none;">
+						<button type="button" class="btn_back">Précedent</button>
+						<button type="button" class="btn_next">Suivant</button>
+					</div>
+					<div class="common_btns form_4_btns" style="display: none;">
+						<button type="button" class="btn_back">Précedent</button>
+						<button type="button" class="btn_next">Suivant</button>
+					</div>
+					<div class="common_btns form_5_btns" style="display: none;">
+						<button type="button" class="btn_back">Précedent</button>
+						<button type="button" class="btn_done">Envoyez</button>
+					</div>
+				</div>
+
+
+				<div class="modal_wrapper">
+					<div class="shadow"></div>
+					<div class="success_wrap">
+						<span class="modal_icon">
+							<ion-icon name="checkmark-sharp"></ion-icon>
+						</span>
+						<p>Vous avez presque terminé !
+							<br>
+							Veuillez vérifier vos mails pour accéder au document PDF pour la signature électronique
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>

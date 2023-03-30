@@ -1,0 +1,11 @@
+framework:
+  http_client:
+    # scoped_clients est utilisé pour créer un client HTTP nommé yousign.client avec une base URI de l'API YouSign Sandbox.
+    scoped_clients:
+      yousign.client:
+        base_uri: "https://api-sandbox.yousign.app/v3/"
+        headers:
+          # Les en-têtes Accept et Authorization sont ajoutés à toutes les requêtes effectuées à travers ce client HTTP
+          Accept: "application/json"
+          # Le jeton d'API est récupéré à partir d'une variable d'environnement YOUSIGN_SANDBOX_API_KEY
+          Authorization: "Bearer %env(YOUSIGN_SANDBOX_API_KEY)%"
