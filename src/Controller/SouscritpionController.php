@@ -24,6 +24,13 @@ class SouscritpionController extends AbstractController
         ]);
     }
 
+
+    #[Route('/formules', name: 'app_souscritpion_formules', methods: ['GET'])]
+    public function formules(ContratRepository $contratRepository): Response
+    {
+        return $this->render('souscritpion/formules.html.twig',);
+    }
+
     #[Route('/new', name: 'app_souscritpion_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ContratRepository $contratRepository, SluggerInterface $slugger): Response
     {
@@ -39,12 +46,12 @@ class SouscritpionController extends AbstractController
                 $originaleFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
                 // this is needed to safely include the file name as part of the URL
                 $safeFilename = $slugger->slug($originaleFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$image->guessExtension();
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
 
                 // Move the file to the directory where brochures are stored
                 try {
                     $image->move(
-                        $this->getParameter('ContratuserImage'),
+                        $this->getParameter('identityUser'),
                         $newFilename
                     );
                 } catch (FileException $e) {
@@ -56,7 +63,6 @@ class SouscritpionController extends AbstractController
                 $contrat->setReservisteFiles($newFilename);
             }
             $contratRepository->save($contrat, true);
-
         }
 
         return $this->renderForm('souscritpion/new.html.twig', [

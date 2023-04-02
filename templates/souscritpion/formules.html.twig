@@ -1,0 +1,175 @@
+{% extends 'base.html.twig' %}
+{% block title %}Formules
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/formules.css') }}">
+{% endblock %}
+
+
+{% block body %}
+	<div class="slide"></div>
+	<section class="main">
+
+		<div class="titre">
+			<h1>SOUSCRIPTION PREMIUM RESERVISTE</h1>
+		</div>
+		<div class="container">
+			<div class="container_1">
+				<table class="table_1">
+					<tr>
+						<th>PRENIUM RÉSERVISTE
+							<br>Garantie de base</th>
+						<th>
+							FORMULE
+							<br>Seuil d’intervention
+							<br><span class="infos">
+								AIPP</span>
+						</th>
+
+					</tr>
+					<tr class="color_table">
+						<td>Atteinte Permanente à l’intégrité Physique et Psychique (AIPP)</td>
+						<td>N** x 164 560 €
+						</td>
+
+					</tr>
+					<tr class="color_table2">
+						<td>Décès</td>
+						<td>
+							41 140 €
+						</td>
+
+					</tr>
+					<tr class="color_table">
+						<td>Frais d’obsèques
+						</td>
+						<td>
+							6 171 €
+						</td>
+
+					</tr>
+
+				</table>
+				<div class="condition">
+					<p>*Montant des garanties et tarifs applicable au 01/01/2023</p>
+					<p>** N est le taux d'AIPP</p>
+				</div>
+
+
+				<div class="container_card">
+					<div
+						class="right">
+						{# <div class="card_form">
+																			<div class="card_content">
+																				<p>Je souhaite bénéficier d’une protection minimale et souscrire seulement la garantie de
+																																																																																																																																																																																																																																																																																																																						                            base:</p>
+																			</div>
+																		</div> #}
+
+						<div class="container_formules">
+							<div class="card_1">
+								<div id="formule1">
+									Formule 1<br>Seuil d’intervention de 10 %
+									<br>cotisation annuelle 15€</div>
+
+							</div>
+							<div class="card_2">
+								<div id="formule2">
+									Formule 2<br>Seuil d’intervention de 5 %
+									<br>cotisation annuelle 18€</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container_2">
+				<table class="table_2">
+					<tr>
+						<th class="tableau_2">PREMIUM RÉSERVISTE
+							<br>Garantie de base</th>
+						<th class="tableau_2">
+							OPTION 1</th>
+						<th class="tableau_2">
+							OPTION 2
+						</th>
+					</tr>
+					<tr>
+						<td class="tableau_2">Indémnité versée dès le 1er jour d’incapacité et jusqu’à 180 jours</td>
+						<td class="tableau_2">20,57 € par jour
+						</td>
+						<td class="tableau_2">41 ,40 € par jour
+						</td>
+					</tr>
+					<tr>
+						<td class="tableau_2">Cotisation annuelle*</td>
+						<td class="tableau_2">
+							35 €
+						</td>
+						<td class="tableau_2">
+							70 €
+						</td>
+					</tr>
+				</table>
+				<div class="condition">
+					<p>*Montant des garanties et tarifs applicable au 01/01/2023</p>
+					<p>** N est le taux d'AIPP</p>
+				</div>
+
+
+				<div class="container_card">
+					<div
+						class="right">
+						{# <div class="card_form">
+																			<div class="card_content">
+																				<p>Je souhaite bénéficier d’une protection complète et souscrire également l’option “Indémnité journalière”:
+																																																																																																																																																																																																																																																																																																																						                            base:</p>
+																			</div>
+																		</div> #}
+
+						<div class="container_formules">
+							<div class="card_1">
+								<div id="formule1">
+									Option 1<br>
+									Indémnité de 20,57 € par jour</div>
+
+							</div>
+							<div class="card_2">
+								<div id="formule2">
+									Option 2<br>Indémnité de 41,14 € par jour</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				{# <div id="modal">
+																									<div class="flex">
+																				
+																										<p>
+																											<span style="color:red;">AIPP
+																											</span>= Atteinte permanente à l’Intégrité Physique et Psychique. En cas d’AIPP, l’Assureur verse à l’Assuré un capital proportionnel au taux d’infirmité retenu par le médecin expert à la consolidation de l’état de santé de l’Assuré sous réserve que ce taux soit au moinségal à celui du seuil d’intervention choisi par l’Assuré.
+																										</p>
+																										<button id="fermer-modal">Fermer</button>
+																									</div>
+																				
+																									<div class="condition">
+																										<p>*Montant des garanties et tarifs applicable au 01/01/2023</p>
+																										<p>** N est le taux d'AIPP</p>
+																									</div>
+																				
+																									<div class="btn">
+																										<button style="color:white;" onclick="location.href='/asset/pages/formules.html'" class="form_btn" id="btn-1">Étape précédente</button>
+																				
+																										<button style="color:white;" onclick="location.href='/asset/pages/form.html'" class="form_btn" id="btn-2">Suivant</button>
+																				
+																				
+																									</div>
+																								</div> #}
+			</div>
+		</div>
+	</div>
+</div></section>{% endblock %}

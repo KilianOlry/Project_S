@@ -5,8 +5,9 @@ namespace App\Form;
 use App\Entity\Contrat;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
@@ -41,7 +42,7 @@ class ContratType extends AbstractType
             ->add('nbReserviste')
             ->add('dateDelivrance')
             ->add('reservisteFiles', FileType::class, [
-                'label' => 'Votre pièce d\identité',
+                'label' => "Votre pièce d'identité",
 
                 // unmapped means that this field is not associated to any entity property
                 'mapped' => false,
@@ -55,19 +56,12 @@ class ContratType extends AbstractType
                 'constraints' => [
                     new File([
                         'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            
-                        ],
+                        'mimeTypes' => [],
                         'mimeTypesMessage' => 'Please upload a valid image',
                     ])
                 ],
             ])
-            ->add('dateGarantie')
-            ->add('signatureId')
-            ->add('documentId')
-            ->add('signerId')
-            ->add('pdfNoFirm')
-        ;
+            ->add('dateGarantie');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

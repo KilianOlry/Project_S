@@ -1,7 +1,102 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{# {{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+
+<main class="sign-up">
 
 
-
+	<div class="sign-up__content">
+		{{ form_start(form, {'attr': {'class':'sign-up__form form'}}) }}
+		<div class="form__row form__row--two">
+			<div class="input form__inline-input">
+				<div class="input__container">
+					{{ form_row(form.civilite, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+		</div>
+		<div class="form__row">
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.prenom, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.nom, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.nomNaissance, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.dateNaissance, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.email, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.paysNaissance, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.adresse, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.codePostale, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.ville, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.telephone, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.situation, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.nbReserviste, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.dateDelivrance, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.reservisteFiles, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+			<div class="input">
+				<div class="input__container">
+					{{ form_row(form.dateGarantie, {'attr': {'class':'input__field'}}) }}
+				</div>
+			</div>
+		</div>
+		<div class="form__row">
+			<div class="component component--primary form__button">
+				<button class="btn">{{ button_label|default('Ajouter') }}</button>
+			</div>
+		</div>
+		{{ form_end(form) }}
+	</div>
+</div></main>

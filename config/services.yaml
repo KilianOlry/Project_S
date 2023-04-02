@@ -4,8 +4,8 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-  offreAssuranceImage: "%kernel.project_dir%/public/assets/uploads/"
-  ContratImage: "%kernel.project_dir%/public/assets/uploads/contrats/"
+  offreAssuranceImage: "%kernel.project_dir%/public/assets/uploads/assurance"
+  identityUser: "%kernel.project_dir%/public/assets/uploads/identite/"
   ContratuserImage: "%kernel.project_dir%/public/assets/uploads/contrats/"
 services:
   # default configuration for services in *this* file

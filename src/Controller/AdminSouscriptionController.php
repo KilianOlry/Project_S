@@ -43,12 +43,12 @@ class AdminSouscriptionController extends AbstractController
                 $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
                 // this is needed to safely include the file name as part of the URL
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$image->guessExtension();
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
 
                 // Move the file to the directory where brochures are stored
                 try {
                     $image->move(
-                        $this->getParameter('ContratImage'),
+                        $this->getParameter('identityUser'),
                         $newFilename
                     );
                 } catch (FileException $e) {
@@ -100,7 +100,7 @@ class AdminSouscriptionController extends AbstractController
     #[Route('/{id}', name: 'app_souscription_delete', methods: ['POST'])]
     public function delete(Request $request, Contrat $contrat, ContratRepository $contratRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$contrat->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $contrat->getId(), $request->request->get('_token'))) {
             $contratRepository->remove($contrat, true);
         }
 
@@ -110,30 +110,43 @@ class AdminSouscriptionController extends AbstractController
     #[Route('/{id}/pdf', name: 'app_souscription_pdf', methods: ['GET'])]
     public function pdf(Request $request, Contrat $contrat, ContratRepository $contratRepository): Response
     {
-       $dompdf = new Dompdf();
+        // Instanciation d'un nouvel objet dompdf
+        $dompdf = new Dompdf();
 
-       $html = $this->renderView('admin-souscription/pdf.html.twig', [
-        'contrat'=> $contrat
-       ]);
+        // On stock le template du fichier pdf dans la variable 'html'
+        $html = $this->renderView('admin-souscription/pdf.html.twig', [
+            'contrat' => $contrat
+        ]);
+        // on transfert le rendu pdf à l'objet dompdf
+        $dompdf->loadHtml($html);
 
-       $dompdf->loadHtml($html);
-       $dompdf->setPaper('A4', 'portrait');
-       $dompdf->render();
+        // on choisit le format et l'orientation du fichier
+        $dompdf->setPaper('A4', 'portrait');
 
-       $output = $dompdf->output();
-       $filename = 'contrat_'.$contrat->getId().'.pdf';
-       $file = $this->getParameter('kernel.project_dir').'/public/'.$filename;
+        $dompdf->render();
+        // on demande qu'il récupère le fichier pdf grâce à la méthode output
+        $output = $dompdf->output();
 
-       $contrat->setPdfNoFirm($filename);
-       $contratRepository->save($contrat, true);
+        // On construit à nom de fichier qui sera "contrat_id.pdf"
+        $filename = 'contrat_' . $contrat->getId() . '.pdf';
 
-       file_put_contents($file, $output);
+        // On définit le chemin dans lequel le fichier sera stocker dans le projet
+        $file = $this->getParameter('kernel.project_dir') . '/public/assets/uploads/contrats/' . $filename;
+
+        // On renseigne le champ contrat dans l'entité
+        $contrat->setPdfNoFirm($filename);
+
+        // On le fait persister
+        $contratRepository->save($contrat, true);
+
+        // On enregistre le ficher
+        file_put_contents($file, $output);
 
         return $this->redirectToRoute('app_souscription_show', ['id' => $contrat->getId()], Response::HTTP_SEE_OTHER);
     }
 
     #[Route('/{id}/signature', name: 'app_souscription_signature', methods: ['GET'])]
-    public function signature(Contrat $contrat, ContratRepository $contratRepository, YouSignService $youSignService ): Response
+    public function signature(Contrat $contrat, ContratRepository $contratRepository, YouSignService $youSignService): Response
     {
         //01 création de la demande de signature
         $yousignSignatureRequest = $youSignService->signatureRequest();
